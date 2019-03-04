@@ -1,6 +1,9 @@
+import logging
+
 import requests
 from flask import Flask, request
 
+from opencensus.common.monitored_resource import monitored_resource
 from opencensus.stats import aggregation, measure, stats, view
 from opencensus.stats.exporters import stackdriver_exporter
 from opencensus.tags import TagMap
@@ -29,6 +32,8 @@ op_stats.view_manager.register_view(requests_view)
 
 @app.route('/')
 def hello_world():
+  logging.info('OpenCensus monitored resource: "%s"',
+               monitored_resource.get_instance())
   mmap = op_stats.stats_recorder.new_measurement_map()
   mmap.measure_int_put(m_requests, 1)
   tmap = TagMap()
