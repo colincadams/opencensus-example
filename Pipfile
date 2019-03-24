@@ -12,7 +12,8 @@ flask = "*"
 opencensus = {ref = "85b462069440db7fe9455af4ce65752fe50acee5",git = "https://github.com/census-instrumentation/opencensus-python.git",editable = true}
 requests = "*"
 google-cloud-monitoring = "*"
-gunicorn = "*"
+gunicorn = {version = "*", extras = ["gevent"]}
+grpcio = "==1.19.0"
 
 [requires]
 python_version = "3.7"
