@@ -11,7 +11,7 @@ google-auth==1.6.3
 google-cloud-monitoring==0.31.1
 googleapis-common-protos==1.5.9
 greenlet==0.4.15 ; platform_python_implementation == 'CPython'
-grpcio==1.19.0
+grpcio==1.18.0
 gunicorn[gevent]==19.9.0
 idna==2.8
 itsdangerous==1.1.0
